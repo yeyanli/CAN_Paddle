@@ -211,7 +211,16 @@ init tensorboard
 
 ## 5. 模型推理部署
 
-如果repo中包含该功能，可以按照Inference推理、Serving服务化部署再细分各个章节，给出具体的使用方法和说明文档。
+模型使用inference进行推理部署，简单的推理命令如下：
+```
+python tools/infer.py --model_dir your_model_path --img_path your_img_path --word_path your_word_path
+```
+其中--model_dir写入预测所需模型文件夹路径，--img_path需要提供预测图片路径，--word_path需要提供词表路径。
+输出结果格式如下所示:
+```
+共 111 类符号。
+image_name: ./images/RIT_2014_94.jpeg, result_seq: \sum _ { n = 1 } ^ { \infty } \frac { \cos \pi n } { n }
+```
 
 
 ## 6. 自动化测试脚本
